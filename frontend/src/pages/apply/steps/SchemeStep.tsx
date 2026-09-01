@@ -87,11 +87,7 @@ export default function SchemeStep({
           </div>
 
           {/* Stats row */}
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(3, 1fr)',
-            gap: 'var(--space-4)',
-          }}>
+          <div className="loan-estimate-grid">
             {/* Pure Gold */}
             <div className="stat-block">
               <p className="stat-label">Pure Gold</p>
