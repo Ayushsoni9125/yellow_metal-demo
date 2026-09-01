@@ -7,7 +7,7 @@ export default function PageHeader() {
     <header className="site-header">
       <div className="container site-header__inner">
         {/* Logo */}
-        <Link to="/apply" className="site-logo" aria-label="GoldCredit home">
+        <Link to="/" className="site-logo" aria-label="GoldCredit home">
           <div className="site-logo__mark" aria-hidden="true">G</div>
           <span className="site-logo__name">
             Gold<span>Credit</span>
@@ -16,6 +16,13 @@ export default function PageHeader() {
 
         {/* Nav */}
         <nav className="site-nav" aria-label="Main navigation">
+          <Link
+            to="/"
+            id="nav-home"
+            className={`nav-link${pathname === '/' ? ' is-active' : ''}`}
+          >
+            Home
+          </Link>
           <Link
             to="/apply"
             id="nav-apply"
