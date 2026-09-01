@@ -35,13 +35,18 @@ async function apiFetch<T>(
 // ─── ApiError ─────────────────────────────────────────────────────────────────
 
 export class ApiError extends Error {
+  readonly status: number
+  readonly fieldErrors?: { field: string; message: string }[]
+
   constructor(
     message: string,
-    public readonly status: number,
-    public readonly fieldErrors?: { field: string; message: string }[],
+    status: number,
+    fieldErrors?: { field: string; message: string }[],
   ) {
     super(message)
     this.name = 'ApiError'
+    this.status = status
+    this.fieldErrors = fieldErrors
   }
 }
 
