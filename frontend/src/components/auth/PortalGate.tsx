@@ -104,10 +104,6 @@ export default function PortalGate({ onUnlock }: PortalGateProps) {
           </button>
         </form>
 
-        <p style={{ textAlign: 'center', fontSize: 'var(--text-xs)', color: 'var(--color-text-tertiary)' }}>
-          Restricted demo intake — authorised reviewers & partners
-        </p>
-
         {/* Demo hint for reviewers */}
         <div
           style={{

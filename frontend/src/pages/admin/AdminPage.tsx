@@ -99,10 +99,6 @@ function AdminGate({ onAuth }: { onAuth: () => void }) {
           </button>
         </form>
 
-        <p style={{ textAlign: 'center', fontSize: 'var(--text-xs)', color: 'var(--color-text-tertiary)' }}>
-          Restricted access — authorised personnel only
-        </p>
-
         {/* Demo hint for reviewers */}
         <div style={{
           borderTop: '1px dashed var(--color-border)',
