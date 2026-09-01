@@ -1,9 +1,25 @@
-import { Routes, Route, Navigate } from 'react-router-dom'
+import { useState } from 'react'
+import { Routes, Route, Navigate, useNavigate } from 'react-router-dom'
 import HomePage from './pages/home/HomePage'
 import ApplyPage from './pages/apply/ApplyPage'
 import AdminPage from './pages/admin/AdminPage'
+import PortalGate, { PORTAL_AUTH_KEY } from './components/auth/PortalGate'
 
 export default function App() {
+  const navigate = useNavigate()
+  const [isUnlocked, setIsUnlocked] = useState(
+    () => sessionStorage.getItem(PORTAL_AUTH_KEY) === '1'
+  )
+
+  const handleUnlock = () => {
+    setIsUnlocked(true)
+    navigate('/', { replace: true })
+  }
+
+  if (!isUnlocked) {
+    return <PortalGate onUnlock={handleUnlock} />
+  }
+
   return (
     <Routes>
       <Route path="/" element={<HomePage />} />
@@ -13,4 +29,5 @@ export default function App() {
     </Routes>
   )
 }
+
 
