@@ -1,0 +1,47 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model LoanPlan {
+  id            String   @id
+  name          String
+  interestRate  Decimal
+  maxLtv        Decimal
+  createdAt     DateTime @default(now())
+
+  leads         Lead[]
+}
+
+model Lead {
+  id                  String   @id @default(cuid())
+  applicationId       String   @unique
+
+  customerName        String
+  mobileNumber        String
+
+  grossWeightGrams    Decimal
+  netWeightGrams      Decimal
+  purityKarat         Int
+
+  pureGoldWeightGrams Decimal
+  goldValue           Decimal
+  eligibleLoanAmount  Decimal
+
+  selectedPlanId      String
+  selectedPlan        LoanPlan @relation(fields: [selectedPlanId], references: [id])
+
+  status              LeadStatus @default(SUBMITTED)
+
+  createdAt           DateTime @default(now())
+
+  @@index([mobileNumber])
+  @@index([createdAt])
+}
+
+enum LeadStatus {
+  SUBMITTED
+}

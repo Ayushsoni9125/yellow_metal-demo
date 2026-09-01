@@ -1,0 +1,17 @@
+# Environment variables (secrets)
+.env
+.env.*
+!.env.example
+
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+
+# Prisma generated client
+node_modules/.prisma/
+
+# OS/Editor
+.DS_Store
+*.log
