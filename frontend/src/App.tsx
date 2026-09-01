@@ -12,6 +12,7 @@ export default function App() {
   )
 
   const handleUnlock = () => {
+    sessionStorage.setItem('gc_admin_auth', '1')
     setIsUnlocked(true)
     navigate('/', { replace: true })
   }
