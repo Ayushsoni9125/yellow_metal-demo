@@ -9,7 +9,6 @@ import {
   Calculator,
   FileCheck2,
   Lock,
-  Sparkles,
   TrendingUp,
 } from 'lucide-react'
 
@@ -19,33 +18,6 @@ export default function HomePage() {
       {/* Hero Section */}
       <section style={{ padding: 'var(--space-12) 0 var(--space-8)' }}>
         <div className="container" style={{ maxWidth: '980px', textAlign: 'center' }}>
-          {/* Eyebrow badge */}
-          <div
-            style={{
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: 'var(--space-2)',
-              background: 'var(--color-gold-light)',
-              border: '1px solid var(--color-gold-border)',
-              padding: '6px 14px',
-              borderRadius: '999px',
-              marginBottom: 'var(--space-6)',
-            }}
-          >
-            <Sparkles size={14} style={{ color: 'var(--color-gold)' }} />
-            <span
-              style={{
-                fontSize: 'var(--text-xs)',
-                fontWeight: 'var(--weight-semibold)',
-                color: 'var(--color-gold-hover)',
-                letterSpacing: '0.04em',
-                textTransform: 'uppercase',
-              }}
-            >
-              RBI Regulated 75% LTV · Instant Valuation
-            </span>
-          </div>
-
           {/* Hero Heading */}
           <h1
             style={{
