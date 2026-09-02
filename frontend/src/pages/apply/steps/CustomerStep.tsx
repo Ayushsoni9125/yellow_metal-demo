@@ -53,6 +53,10 @@ export default function CustomerStep({ defaultValues, onNext }: CustomerStepProp
               required: 'Full name is required',
               minLength: { value: 2, message: 'Name must be at least 2 characters' },
               maxLength: { value: 100, message: 'Name must not exceed 100 characters' },
+              pattern: {
+                value: /^[A-Za-z\s]+$/,
+                message: 'Name can only contain alphabets and spaces',
+              },
               setValueAs: (v: string) => v.trim(),
             })}
           />
